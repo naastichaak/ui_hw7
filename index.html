@@ -11,19 +11,23 @@
   <header>
     <div class="logo">Nova<span>Build</span></div>
     <nav>
+      <!-- logo + nav — adjacent sibling combinator used in CSS -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#footer" class="nav-link">Contact</a></li>
       </ul>
-      <button class="btn-primary" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})">
-        Get in touch
+      <button class="btn-primary">
+        <a href="ugly.html">Get in touch</a>
       </button>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
     </nav>
   </header>
 
+  <!-- ===========================
+       HERO SECTION — #id selector, position: relative + absolute
+  =========================== -->
   <section id="hero">
     <!-- decorative glow — position: absolute -->
     <div class="hero-glow" aria-hidden="true"></div>
@@ -66,6 +70,9 @@
     </div>
   </section>
 
+  <!-- ===========================
+       ABOUT SECTION — position: sticky label
+  =========================== -->
   <section id="about">
     <span class="section-label">Who We Are</span>
     <!-- section-label ~ h2 — general sibling combinator in CSS -->
@@ -107,6 +114,9 @@
     </div>
   </section>
 
+  <!-- ===========================
+       SERVICES SECTION — Flexbox, nth-child, ::before/::after
+  =========================== -->
   <section id="services">
     <span class="section-label">What We Do</span>
     <h2>Services crafted<br>for your growth</h2>
@@ -152,6 +162,9 @@
     </div>
   </section>
 
+  <!-- ===========================
+       FOOTER — contact info + social links
+  =========================== -->
   <footer id="footer">
     <div class="footer-layout">
 
@@ -172,7 +185,7 @@
       <div class="footer-col contact-info">
         <h4>Contact</h4>
         <p>📍 Kyiv, Ukraine</p>
-        <p>📧 <a href="mailto:hello@novabuild.dev">hello@novabuild.dev</a></p>
+        <p>📧 <a href="/cdn-cgi/l/email-protection#650d0009090a250b0a130407100c09014b010013"><span class="__cf_email__" data-cfemail="640c0108080b240a0b120506110d08004a000112">[email&#160;protected]</span></a></p>
         <p>📞 <a href="tel:+380441234567">+38 044 123 4567</a></p>
       </div>
 

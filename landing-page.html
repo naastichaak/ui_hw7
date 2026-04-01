@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NovaBuild</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Nova<span>Build</span></div>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#footer" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn-primary" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})">
+        Get in touch
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <!-- decorative glow — position: absolute -->
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <!-- child combinator (>) used in CSS for .hero-badge -->
+    <div class="hero-badge">✦ New 2026 Solutions</div>
+
+    <h1 class="hero-heading">
+      Build the future<br>
+      with <span class="accent">precision</span>
+    </h1>
+
+    <p class="hero-sub">
+      NovaBuild delivers cutting-edge software solutions that scale
+      with your ambition — from MVP to enterprise.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+        Explore Services
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        Learn About Us
+      </button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <span class="section-label">Who We Are</span>
+    <!-- section-label ~ h2 — general sibling combinator in CSS -->
+    <h2>Built on expertise,<br>driven by results</h2>
+    <p class="section-desc">
+      We are a product-focused engineering studio specialising in
+      web, mobile, and AI-powered applications.
+    </p>
+
+    <!-- FLEXBOX layout -->
+    <div class="about-layout">
+      <div class="about-text">
+        <p>
+          Founded in 2018, <strong>NovaBuild</strong> has grown from a small dev team
+          into a full-stack studio trusted by startups and Fortune 500 companies alike.
+        </p>
+        <p>
+          Our engineers, designers, and strategists collaborate tightly to deliver
+          solutions that are not only functional — but <strong>elegant and maintainable</strong>.
+        </p>
+        <p>
+          We embrace modern tooling, agile methodology, and continuous delivery
+          to keep your product ahead of the curve.
+        </p>
+        <p>
+          Every engagement begins with a discovery phase where we
+          immerse ourselves in your domain, your users, and your goals.
+        </p>
+      </div>
+
+      <!-- position: sticky -->
+      <div class="about-sticky-label">
+        <strong>Our Philosophy</strong>
+        <p>
+          Great software starts with deep understanding. We listen first,
+          then design, build, and iterate — always with your users at the center.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <span class="section-label">What We Do</span>
+    <h2>Services crafted<br>for your growth</h2>
+    <p class="section-desc">
+      From architecture to deployment, we cover the full spectrum
+      of modern product development.
+    </p>
+
+    <!-- FLEXBOX grid -->
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-icon">⚡</span>
+        <h3>Web Development</h3>
+        <p>
+          Performant, accessible, and beautifully crafted web applications
+          built with React, Next.js, and modern backend technologies.
+        </p>
+        <span class="service-tag">Learn more</span>
+      </div>
+
+      <!-- :nth-child(2) styled differently in CSS -->
+      <div class="service-card">
+        <span class="service-icon">📱</span>
+        <h3>Mobile Apps</h3>
+        <p>
+          Cross-platform mobile solutions with React Native and Flutter
+          that feel native on every device and delight your users.
+        </p>
+        <span class="service-tag">Learn more</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🤖</span>
+        <h3>AI Integration</h3>
+        <p>
+          Embed intelligent features — from LLM-powered assistants to
+          computer vision — directly into your existing product stack.
+        </p>
+        <span class="service-tag">Learn more</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer-layout">
+
+      <div class="footer-brand">
+        <span class="logo">Nova<span>Build</span></span>
+        <p>Engineering studio specialising in web, mobile, and AI-powered solutions.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-info">
+        <h4>Contact</h4>
+        <p>📍 Kyiv, Ukraine</p>
+        <p>📧 <a href="mailto:hello@novabuild.dev">hello@novabuild.dev</a></p>
+        <p>📞 <a href="tel:+380441234567">+38 044 123 4567</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Social Media</h4>
+        <div class="social-links">
+          <a href="#" class="social-link">𝕏 Twitter</a>
+          <a href="#" class="social-link">in LinkedIn</a>
+          <a href="#" class="social-link">⌥ GitHub</a>
+          <a href="#" class="social-link">▲ Dribbble</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 NovaBuild. All rights reserved.</p>
+      <p>SDT104 HW7 – Part 2</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+
+</body>
+</html>

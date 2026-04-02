@@ -1,294 +1,155 @@
-    * {
-      box-sizing: border-box;
-      margin: 5px;
-      padding: 5px;
-      border: 3px dashed lime;
-      text-decoration: none;
-    }
+* {
+    box-sizing: border-box;
+    font-family: Comic Sans MS, cursive;
+    text-decoration: none;
+}
 
+body {
+    background: linear-gradient(red, yellow, lime, blue);
+    margin: 0;
+}
+
+#mainHeader {
+    position: sticky;
+    top: 0;
+    background: purple;
+    padding: 50px;
+    border: 10px dashed green;
+    text-align: center;
+}
+
+.title {
+    color: cyan;
+    font-size: 50px;
+    transform: rotate(-5deg);
+}
+
+.navBar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    background: black;
+    padding: 20px;
+}
+
+.navBar > ul > li {
+    list-style: none;
+}
+
+.navBar a {
+    color: yellow;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.navBar a:hover {
+    background: pink;
+    color: red;
+    font-size: 40px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 300px;
+}
+
+.box {
+    flex-grow: 1;
+    margin: 50px;
+    padding: 40px;
+    border: 5px solid black;
+}
+
+.box:nth-child(1) {
+    background: orange;
+    position: relative;
+    top: 50px;
+}
+
+.box:nth-child(2) {
+    background: hotpink;
+    position: absolute;
+    left: 30%;
+}
+
+.box:nth-child(3) {
+    background: lightgreen;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.content p {
+    font-size: 30px;
+    margin: 100px;
+    padding: 20px;
+    border: 3px dotted blue;
+}
+
+.content p + p {
+    color: red;
+}
+
+.content p ~ p {
+    transform: skew(10deg);
+}
+
+.content p::before {
+    content: "🔥 ";
+}
+
+.content p::after {
+    content: " 💀";
+}
+
+.floating {
+    float: right;
+    width: 200px;
+    height: 200px;
+    background: black;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+    background: brown;
+    padding: 40px;
+    font-size: 25px;
+}
+
+@media (max-width: 800px) {
     body {
-      background-color: #ff00ff;
-      background-image: repeating-linear-gradient(
-        45deg,
-        #ff0000 0px, #ff0000 10px,
-        #ffff00 10px, #ffff00 20px,
-        #00ff00 20px, #00ff00 30px,
-        #0000ff 30px, #0000ff 40px
-      );
-      font-family: "Comic Sans MS", cursive;
-      overflow-x: hidden;
-      cursor: url("https://cur.cursors-4u.net/cursors/cur-11/cur1054.cur"), auto;
+        background: black;
+        color: white;
     }
 
-    /* Element selector */
-    h1 {
-      color: #00ff00;
-      text-shadow: 5px 5px 0 red, -5px -5px 0 blue;
-      font-size: 4rem;
-      transform: rotate(-7deg);
-      margin: 40px;
-      padding: 20px;
-      border: 10px solid yellow;
-      animation: shake 0.2s infinite;
+    .hero {
+        flex-direction: column;
     }
 
-    /* Class selector */
-    .ugly-box {
-      background: orange;
-      border: 8px ridge purple;
-      margin: 30px;
-      padding: 40px;
-      width: 300px;
+    .box {
+        transform: rotate(20deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .title {
+        font-size: 80px;
+        color: lime;
     }
 
-    /* ID selector */
-    #very-important {
-      background: cyan;
-      border: 15px dotted red;
-      padding: 50px;
-      font-size: 2rem;
-      color: darkred;
-      text-decoration: underline overline line-through;
+    .navBar ul {
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Universal selector already used above (*) */
-
-    /* Child combinator */
-    .container > p {
-      color: purple;
-      font-size: 1.5rem;
-      background: yellow;
+    .floating {
+        display: none;
     }
-
-    /* Adjacent sibling combinator */
-    h2 + p {
-      background: hotpink;
-      border: 5px solid black;
-      padding: 20px;
-      font-size: 1.3rem;
-    }
-
-    /* General sibling combinator */
-    h2 ~ div {
-      border-left: 20px solid red;
-      margin-left: 50px;
-    }
-
-    h2 {
-      color: red;
-      background: yellow;
-      font-size: 2.5rem;
-      text-shadow: 3px 3px 0 blue;
-      transform: skewX(-10deg);
-      padding: 15px;
-      border: 6px solid green;
-    }
-
-    /* :hover */
-    .hover-me:hover {
-      background: red;
-      color: yellow;
-      font-size: 3rem;
-      transform: scale(2) rotate(45deg);
-      transition: all 0.1s;
-      border: 10px solid blue;
-    }
-
-    /* :nth-child() */
-    .list-section li:nth-child(odd) {
-      background: lime;
-      color: red;
-    }
-    .list-section li:nth-child(even) {
-      background: red;
-      color: lime;
-    }
-
-    /* ::before */
-    .has-before::before {
-      content: "⚡🔥💀 ";
-      font-size: 1.5rem;
-    }
-
-    /* ::after */
-    .has-after::after {
-      content: " 💩🎉👽";
-      font-size: 1.5rem;
-    }
-
-    /* relative */
-    .relative-box {
-      position: relative;
-      top: 20px;
-      left: 30px;
-      background: aqua;
-      border: 5px solid black;
-      padding: 20px;
-      width: 250px;
-    }
-
-    /* absolute inside relative */
-    .relative-parent {
-      position: relative;
-      height: 200px;
-      background: pink;
-      border: 5px dashed green;
-      margin: 20px;
-    }
-
-    .absolute-box {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: red;
-      color: white;
-      padding: 10px;
-      border: 5px solid black;
-      font-size: 1.2rem;
-      transform: rotate(25deg);
-    }
-
-    /* fixed */
-    .fixed-box {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: lime;
-      color: red;
-      border: 5px solid blue;
-      padding: 15px;
-      font-size: 1.2rem;
-      z-index: 999;
-      animation: blink 0.5s step-start infinite;
-    }
-
-    /* sticky */
-    .sticky-header {
-      position: sticky;
-      top: 0;
-      background: #ff00ff;
-      border: 8px solid yellow;
-      padding: 10px;
-      z-index: 100;
-      font-size: 1.5rem;
-      color: white;
-      text-align: center;
-    }
-
-    .float-left {
-      float: left;
-      background: red;
-      color: white;
-      width: 150px;
-      height: 150px;
-      padding: 20px;
-      border: 5px solid yellow;
-      margin-right: 15px;
-    }
-
-    .flex-disaster {
-      display: flex;
-      justify-content: space-around;
-      align-items: stretch;
-      flex-wrap: wrap;
-      flex-direction: column;
-      gap: 40px;
-      background: navy;
-      padding: 30px;
-      border: 10px groove yellow;
-      height: 400px;
-    }
-
-    .flex-item {
-      flex-grow: 5;
-      background: orange;
-      color: purple;
-      font-size: 1.5rem;
-      border: 5px inset red;
-      padding: 20px;
-      text-align: right;
-    }
-
-    .flex-item:nth-child(2) {
-      flex-grow: 0.1;
-      align-self: flex-end;
-      background: lime;
-      transform: rotate(-15deg);
-    }
-
-    @media (max-width: 768px) {
-      body {
-        background-color: lime;
-        background-image: repeating-linear-gradient(
-          90deg,
-          cyan 0px, cyan 15px,
-          magenta 15px, magenta 30px
-        );
-      }
-      h1 {
-        font-size: 1rem;
-        transform: rotate(180deg);
-        color: black;
-      }
-      .ugly-box {
-        width: 100%;
-        background: purple;
-        color: yellow;
-      }
-    }
-
-    @media (min-width: 769px) and (max-width: 1200px) {
-      body {
-        background: repeating-radial-gradient(circle, red 0px, blue 30px, green 60px);
-      }
-      h2 {
-        font-size: 4rem;
-        letter-spacing: -5px;
-      }
-    }
-
-    @media (min-width: 1201px) {
-      .container {
-        flex-direction: row-reverse;
-        gap: 100px;
-      }
-      h1 {
-        animation: spin 1s linear infinite;
-      }
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes shake {
-      0%, 100% { transform: rotate(-7deg) translateX(0); }
-      25% { transform: rotate(-7deg) translateX(-10px); }
-      75% { transform: rotate(-7deg) translateX(10px); }
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    ul {
-      background: yellow;
-      padding: 20px;
-      font-size: 1.3rem;
-    }
-
-    img.meme {
-      border: 10px ridge red;
-      transform: rotate(5deg);
-      width: 200px;
-      margin: 20px;
-    }
+}
